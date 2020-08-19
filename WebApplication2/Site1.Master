@@ -1,0 +1,180 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication2.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+    
+        body{
+            background-color:antiquewhite;
+            /*background-color: #f7c6b5;*/
+            
+        }
+        .picture {
+            margin: 5px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            margin-top: 5px;
+            margin-bottom: 0px;
+            height: 100px;
+            width: 100%;
+            background-image: url("images/banner.jpg");
+            background-size: cover;
+            background-color: antiquewhite;
+            text-align: center;
+            font-weight: 400;
+            font-size: xx-large;
+            font-family: Bahnschrift;
+            /*text-shadow: 2px 2px 5px blueviolet;*/
+            text-shadow: 2px 2px 5px crimson;
+            color: black;
+        }
+
+        .centered {
+            position: absolute;
+            top: 40px;
+            left: 250px;
+            /*transform: translate(-50%, -50%);*/
+        }
+
+        .menu{
+            margin:0px;
+            padding:0px;
+            align-content:center;
+            align-items:start;
+            /*font-weight:bold;*/
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .menuitem{
+            text-align:center;
+        }
+
+        .home {
+            display:block;
+            float:left;
+            width: 20%;
+            background-color: antiquewhite;
+            /*background-color: #f7c6b5;*/
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image:url("images/sideban1.jpg");
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-blend-mode:multiply;
+            height:460px;
+            
+            
+        }
+
+        .home1 {
+            display: block;
+            float: left;
+            width: 60%;
+            background-color: antiquewhite;
+            /*background-color: #f7c6b5;*/
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        .home2 {
+            display: block;
+            float: right;
+            width: 20%;
+            background-color: antiquewhite;
+            /*background-color: #f7c6b5;*/
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url("images/sideban3.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-blend-mode:multiply;
+            height:460px;
+
+        }
+
+        div.item {
+            float: left;
+            padding: 20px;
+            /*border-color:crimson;*/
+            border-color: #462c23;
+            border-width: 1px;
+            border-style: solid;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+            div.item:hover {
+                /*box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);*/
+                box-shadow: rgba(0,0,0,0.4) 2px 2px inset;
+                /*background-color:antiquewhite;  */
+                background-color: #f7c6b5;
+                /*/background-color: #462c23;*/
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color:brown;
+            }
+
+
+        .itemhead {
+            display: block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            /*background-color: crimson;*/
+            background-color: #462c23;
+            color: lightyellow;
+            width: 100%;
+            float: left;
+            font-size: medium;
+            font-weight: 100;
+            margin-top:10px;
+            margin-bottom:10px;
+        }
+
+        .caption{
+            
+          display:block;
+          text-align:center;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <form id="form1" runat="server">
+        <div class="picture">
+            <div class=centered>Petals.com ~~ Welcome to the World of Flowers</div>        
+        </div>
+        <div class="menu">
+        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" Style="text-align:left" width="100%" BorderStyle="Double" BorderWidth="2px" StaticHoverStyle-BorderStyle="Double">
+            <StaticMenuItemStyle Width="202px" BackColor="#462c23" ForeColor=white Height="30px" Font-Size="Large" VerticalPadding="5px" CssClass="menuitem" />
+            <StaticHoverStyle backcolor="antiquewhite" forecolor="#462c23" BorderStyle="Solid" BorderWidth="1px"/>
+
+            <Items>
+                <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Browse Catalog" Value="Catalog" NavigateUrl="~/Catalog.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Login" Value="Login" NavigateUrl="~/login.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="View Cart" Value="View Cart" NavigateUrl="~/ViewCart.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Billing" Value="Billing" NavigateUrl="~/Billing.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Contact Us" Value="Contact Us" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
+            </Items>
+            <StaticHoverStyle BackColor="#f7c6b5" BorderColor="#462c23" Font-Names="Segoe UI, Tahoma, Geneva, Verdana, sans-serif;" />
+        </asp:Menu>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+    </form>
+</body>
+</html>
